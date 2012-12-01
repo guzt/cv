@@ -1,0 +1,363 @@
+/* C 2012 Arjun Asthana.
+ * Modification and redistribution allowed under CC BY-NC-SA 3.0.
+ * http://creativecommons.org/licenses/by-nc-sa/3.0/
+ *
+ * Template:
+ * http://dl.dropbox.com/u/22716841/cv/{cv.css,cvo.html,pdf.png,print.png,integrate.sh}
+ * */
+
+a {
+	text-decoration: inherit;
+	color: inherit;
+}
+
+body {
+	padding-top: 1em;
+	padding-bottom: 1.5em;
+	background-image: -ms-linear-gradient(left, #EEEEEE 0%, #FFFFFF 100%);
+	background-image: -moz-linear-gradient(left, #EEEEEE 0%, #FFFFFF 100%);
+	background-image: -o-linear-gradient(left, #EEEEEE 0%, #FFFFFF 100%);
+	background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #EEEEEE), color-stop(1, #FFFFFF));
+	background-image: -webkit-linear-gradient(left, #EEEEEE 0%, #FFFFFF 100%);
+	background-image: linear-gradient(to right, #EEEEEE 0%, #FFFFFF 100%);
+	/* http://ie.microsoft.com/testdrive/graphics/cssgradientbackgroundmaker/default.html
+	 * http://www.colorzilla.com/gradient-editor/
+	 */
+}
+
+.resumeContent {
+	width: 60%;
+	margin-left: 10%;
+	margin-right: auto;
+}
+
+.resumeContent * {
+	font-family: "DejaVu Sans", Calibri, Verdana, sans-serif;
+	color: #444;
+}
+
+.resumeHeader {
+	font: 22px Ubuntu, Calibri, Verdana, sans-serif;
+	font-variant: small-caps;
+	text-align: center;
+	background-color: #ccc;
+	position: fixed;
+	top: 0;
+	right: 10%;
+	left: 10%;
+	padding-left: 0.5ex;
+	-webkit-box-shadow: #BBB 0px 0px 10px;
+	-moz-box-shadow: #BBB 0px 0px 10px;
+	box-shadow: #BBB 0px 0px 10px;
+}
+
+.resumeFooter {
+	font: 20px "Ubuntu Mono", monospace;
+	text-align: right;
+	background-color: #ccc;
+	position: fixed;
+	bottom: 0;
+	right: 10%;
+	left: 10%;
+	padding-right: 0.5ex;
+	-webkit-box-shadow: #BBB 0px 0px 10px;
+	-moz-box-shadow: #BBB 0px 0px 10px;
+	box-shadow: #BBB 0px 0px 10px;
+}
+
+.resumeHeader .name:after {
+	font-size: 16px;
+	content: " [Resume]";
+}
+
+.resumeFooter span {
+	float: left;
+	text-align: center;
+	width: 25%;
+}
+
+.resumeFooter span:after {
+	content: "; ";
+}
+
+/*.resumeFooter .email:before, .resumeAbout .email:before {*/
+.email:before {
+	content: "\2709:  ";
+	font-weight: bold;
+}
+
+/*.resumeFooter .mobile:before, .resumeAbout .mobile:before {*/
+.mobile:before {
+	content: "\2706:  ";
+	font-weight: bold;
+}
+
+/*.resumeFooter .landline:before {*/
+.landline:before {
+	content: "\260E:  ";
+	font-weight: bold;
+}
+
+.resumeAbout {
+	font: 16px Ubuntu, Calibri, sans-serif;
+	text-align: center;
+	position: fixed;
+	right: 11%;
+	top: 4em;
+	width: 200px;
+	height: auto;
+	padding: 0.5ex;
+	/*padding-top: 0.8ex;
+	padding-left: 0.5ex;
+	padding-right: 0.5ex;
+	padding-bottom: 0.8ex;*/
+	/*text-align: justify;*/
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	border: 1px solid #999;
+	background-color: #DDD;
+	-webkit-box-shadow: #BBB 0px 0px 10px;
+	-moz-box-shadow: #BBB 0px 0px 10px;
+	box-shadow: #BBB 0px 0px 10px;
+}
+
+/*.resumeAbout .photo {
+	width: 200px;
+	height: 200px;
+	margin-left: auto;
+	margin-right: auto;
+	**background-image: url(photo.jpg);
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-box-shadow: #888 0px 0px 10px;
+	-moz-box-shadow: #888 0px 0px 10px;
+	box-shadow: #888 0px 0px 10px;
+}*/
+
+.resumeAbout img {
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-box-shadow: #888 0px 0px 10px;
+	-moz-box-shadow: #888 0px 0px 10px;
+	box-shadow: #888 0px 0px 10px;
+}
+
+.resumeAbout .photo:after {
+	content: "";
+}
+
+.resumeAbout .name:before {
+	content: "name\0A";
+	text-decoration: underline;
+	white-space: pre;
+	font-weight: bold;
+}
+
+.resumeAbout .interests:before {
+	content: "job interests\0A";
+	text-decoration: underline;
+	white-space: pre;
+	font-weight: bold;
+}
+
+.resumeAbout div:after {
+	content: '; ';
+}
+
+.resumeAbout .contact:before {
+	content: "contact\0A";
+	text-decoration: underline;
+	white-space: pre;
+	font-weight: bold;
+}
+
+.resumeContent .section {
+	margin-top: 1em;
+}
+
+.resumeContent .section:hover {
+	color: black;
+	-webkit-box-shadow: #999 0px 0px 10px;
+	-moz-box-shadow: #999 0px 0px 10px;
+	box-shadow: #888 0px 0px 10px;
+}
+
+.resumeContent .section:before {
+	content: attr(title);
+	font-variant: small-caps;
+	font-weight: bold;
+	text-align: center;
+	background: #eee;
+	color: #000;
+	display: block;
+}
+
+.resumeContent .section td {
+	vertical-align: text-top;
+}
+
+.resumeContent .section td ol {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.resumeContent .section ol {
+	margin-top: 0.5ex;
+	padding-left: 2em;
+}
+
+.resumeContent .section em {
+	text-decoration: underline;
+	color: #000;
+	font-style: normal;
+}
+
+.resumeContent .section .date {
+	/*width: 14ex;*/
+	font-size: 14px;
+	white-space: nowrap;
+	padding-right: 0.5ex;
+}
+
+.resumeContent .section .subsection:before {
+	content: attr(title) ":";
+	text-decoration: underline;
+	padding-right: 1ex;
+}
+
+.resumeContent .publication {
+	font-variant: small-caps;
+	color: #000;
+}
+
+.resumeContent .publication:before {
+	content: attr(authors) ". ";
+	font-variant: normal;
+	color: #333;
+}
+
+.resumeContent .publication:after {
+	content: ". " attr(publisher) ".";
+	font-variant: normal;
+	color: #333;
+}
+
+@media screen {
+	/*.resumeContent #interests {
+		display: none;
+	}*/
+
+	.resumeFooter {
+		border: 1px solid #999;
+		border-bottom: 0;
+	}
+
+	.resumeHeader {
+		border: 1px solid #999;
+		border-top: 0;
+	}
+
+	.resumeFooter .screen {
+		text-align: justify;
+		overflow: hidden;
+		height: 1.1em;
+		padding-left: 0.8ex;
+	}
+
+	.resumeFooter .screen:after {
+		content: "___________________________________________________________________________________";
+		visibility: hidden;
+		line-height: 0;
+		height: 0;
+	}
+
+	.resumeContent .section:before {
+		border: 1px solid #aaa;
+	}
+
+	.print {
+		display: none;
+	}
+}
+
+@media print {
+	.screen {
+		display: none;
+	}
+
+	* {
+		-webkit-print-color-adjust: exact;
+	}
+
+	.resumeHeader {
+		font-size: 18px;
+		position: static;
+		top: 0;
+	}
+
+	body {
+		padding-top: 0;
+		padding-bottom: 0;
+		background: none;
+	}
+
+	.resumeFooter {
+		font-size: 14px;
+		position: static;
+		height: 1.2em;
+		left: 0;
+		right: 0;
+	}
+
+	.resumeFooter .name {
+		display: none;
+	}
+
+	.resumeFooter span {
+		width: 33%;
+	}
+
+	.resumeHeader {
+		position: static;
+		left: 0;
+		right: 0;
+	}
+
+	/*.resumeHeader #pages:before {
+		font-size: 16px;
+		float: right;
+		content: "Pg " counter(page) "/" counter(pages);
+	}*/
+
+	.resumeContent {
+		margin-left: 0;
+		width: auto;
+	}
+
+	.resumeContent * {
+		font-size: 10px;
+	}
+
+	.resumeContent .section {
+		border: none;
+	}
+
+	.resumeContent .section .date {
+		font-size: 8px;
+	}
+
+	.resumeAbout {
+		display: none;
+	}
+
+	a[href]:after {
+		" [" attr(href) "] ";
+	}
+
+	.resumeHeader .icons {
+		display:none;
+	}
+}
