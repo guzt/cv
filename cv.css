@@ -2,9 +2,10 @@
  * Modification and redistribution allowed under CC BY-NC-SA 3.0.
  * http://creativecommons.org/licenses/by-nc-sa/3.0/
  *
- * Template:
- * http://dl.dropbox.com/u/22716841/cv/{cv.css,cvo.html,pdf.png,print.png,integrate.sh}
- * */
+ * Template: http://github.com/guzt/cv/
+ *
+ * TODO: Figure out a way to add non-JS show/hide for sections
+ */
 
 a {
 	text-decoration: inherit;
@@ -83,19 +84,16 @@ body {
 /*.resumeFooter .email:before, .resumeAbout .email:before {*/
 .email:before {
 	content: "\2709:  ";
-	font-weight: bold;
 }
 
 /*.resumeFooter .mobile:before, .resumeAbout .mobile:before {*/
 .mobile:before {
 	content: "\2706:  ";
-	font-weight: bold;
 }
 
 /*.resumeFooter .landline:before {*/
 .landline:before {
 	content: "\260E:  ";
-	font-weight: bold;
 }
 
 .resumeAbout {
@@ -149,15 +147,8 @@ body {
 	content: "";
 }
 
-.resumeAbout .name:before {
-	content: "name\0A";
-	text-decoration: underline;
-	white-space: pre;
-	font-weight: bold;
-}
-
-.resumeAbout .interests:before {
-	content: "job interests\0A";
+.resumeAbout .container:before {
+	content: attr(title) "\0A";
 	text-decoration: underline;
 	white-space: pre;
 	font-weight: bold;
@@ -165,13 +156,6 @@ body {
 
 .resumeAbout div:after {
 	content: '; ';
-}
-
-.resumeAbout .contact:before {
-	content: "contact\0A";
-	text-decoration: underline;
-	white-space: pre;
-	font-weight: bold;
 }
 
 .resumeContent .section {

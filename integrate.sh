@@ -3,7 +3,7 @@
 # CSS="cv.css"
 # PHOTO="photo.jpg"
 
-ROOTDIR="$1"/
+ROOTDIR="$1"
 
 while IFS='' read -r a; do
 	if echo "$a" | egrep '<link rel="stylesheet" type="text/css" href=".*" />' >/dev/null; then
@@ -33,4 +33,4 @@ while IFS='' read -r a; do
 	else
 		echo -E "$a"
 	fi
-done
+done < cv.html > cv-pages/cv.html
