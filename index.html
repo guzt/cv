@@ -10,6 +10,9 @@
 			 * Template: http://github.com/guzt/cv/
 			 *
 			 * TODO: Figure out a way to add non-JS show/hide for sections
+			 *       Cleanup CSS, remove unused/unneeded code
+			 *       Properly separate code for screen and print media
+			 *       Create CSS for mobile media
 			 */
 			
 			a {
@@ -234,19 +237,65 @@
 				color: #333;
 			}
 			
+			@media only screen and (max-width: 1100px), only screen and (max-device-width: 1100px) {
+				body {
+					padding-top: 0;
+					padding-bottom: 0;
+				}
+			
+				.resumeHeader {
+					position: static;
+					right: auto;
+					left: auto;
+					top: auto;
+					bottom: auto;
+					border-top: 1px solid #999;
+				}
+			
+				.resumeAbout {
+					margin-top: 1ex;
+					position: static;
+					right: auto;
+					left: auto;
+					top: auto;
+					bottom: auto;
+					width: auto;
+					margin-left: 10%;
+					margin-right: 10%;
+				}
+			
+				.resumeAbout #photo {
+					float: left;
+					margin-right: 1ex;
+				}
+			
+				.resumeFooter {
+					display: none;
+				}
+			
+				.resumeContent {
+					margin-right: 0;
+					margin-left: 0;
+					width: auto;
+				}
+			}
+			
+			
 			@media screen {
 				/*.resumeContent #interests {
 					display: none;
 				}*/
 			
 				.resumeFooter {
-					border: 1px solid #999;
-					border-bottom: 0;
+					border-top: 1px solid #999;
+					border-left: 1px solid #999;
+					border-right: 1px solid #999;
 				}
 			
 				.resumeHeader {
-					border: 1px solid #999;
-					border-top: 0;
+					border-left: 1px solid #999;
+					border-right: 1px solid #999;
+					border-bottom: 1px solid #999;
 				}
 			
 				.resumeFooter .screen {
