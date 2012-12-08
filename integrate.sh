@@ -33,4 +33,4 @@ while IFS='' read -r a; do
 	else
 		echo -E "$a"
 	fi
-done < cv.html > cv-pages/cv.html
+done < cv.html > cv-pages/index.html

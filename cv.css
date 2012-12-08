@@ -8,6 +8,7 @@
  *       Cleanup CSS, remove unused/unneeded code
  *       Properly separate code for screen and print media
  *       Create CSS for mobile media
+ *       Use proper HTML5 tags instead of <div>s and <span>s
  */
 
 a {
@@ -209,10 +210,15 @@ body {
 	padding-right: 0.5ex;
 }
 
+.resumeContent .section .subsection {
+	margin-left: 1.5ex;
+}
+
 .resumeContent .section .subsection:before {
 	content: attr(title) ":";
 	text-decoration: underline;
 	padding-right: 1ex;
+	margin-left: -1.5ex;
 }
 
 .resumeContent .publication {
@@ -280,6 +286,16 @@ body {
 	/*.resumeContent #interests {
 		display: none;
 	}*/
+
+	.resumeContent .section:before {
+		margin-left: -0.5ex;
+		margin-right: -0.5ex;
+		margin-top: -0.5ex;
+	}
+
+	.resumeContent .section {
+		padding: 0.5ex;
+	}
 
 	.resumeFooter {
 		border-top: 1px solid #999;
