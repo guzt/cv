@@ -156,10 +156,6 @@ body {
 	content: '; ';
 }
 
-.resumeContent .section {
-	margin-top: 1em;
-}
-
 .resumeContent .section:hover {
 	color: black;
 	-webkit-box-shadow: #999 0px 0px 10px;
@@ -397,6 +393,7 @@ body {
 
 	.resumeContent .section {
 		border: none;
+		margin-top: 1ex;
 	}
 
 	.resumeContent .section .date {
