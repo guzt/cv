@@ -393,7 +393,19 @@ body {
 
 	.resumeContent .section {
 		border: none;
-		margin-top: 1em;
+		margin-top: 1ex;
+	}
+
+	.resumeContent .section:before {
+		/*
+		margin-left: auto;
+		margin-right: auto;
+		display: table;
+		padding-left: 0.3ex;
+		padding-right: 0.3ex;
+		white-space: nowrap;
+		*/
+		border: 1px solid #aaa;
 	}
 
 	.resumeContent .section .date {
@@ -415,19 +427,17 @@ body {
 	.footer {
 		position: fixed;
 		bottom: 0;
-		width: 100%;
-		right: 0;
 		margin-right: 0;
 		padding-right: 0;
+		display: none;
 	}
 
 	.left {
-		text-align: left;
+		left: 0;
 	}
 
 	.right {
-		float: right;
-		text-align: right;
+		right: 0;
 	}
 
 }
