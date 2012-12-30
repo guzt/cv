@@ -388,12 +388,12 @@ body {
 	}
 
 	.resumeContent * {
-		font-size: 10px;
+		font-size: 12px;
 	}
 
 	.resumeContent .section {
 		border: none;
-		margin-top: 1ex;
+		margin-top: 1em;
 	}
 
 	.resumeContent .section .date {
@@ -411,4 +411,23 @@ body {
 	.resumeHeader .icons {
 		display:none;
 	}
+
+	.footer {
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+		right: 0;
+		margin-right: 0;
+		padding-right: 0;
+	}
+
+	.left {
+		text-align: left;
+	}
+
+	.right {
+		float: right;
+		text-align: right;
+	}
+
 }
