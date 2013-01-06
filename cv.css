@@ -207,7 +207,7 @@ body {
 
 .resumeContent .section .subsection:before {
 	content: attr(title) ":";
-	text-decoration: underline;
+	color: #000;
 	padding-right: 1ex;
 	margin-left: -1.5ex;
 }
