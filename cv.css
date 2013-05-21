@@ -199,6 +199,7 @@ body {
 	font-size: 14px;
 	white-space: nowrap;
 	padding-right: 0.5ex;
+	text-align: center;
 }
 
 .resumeContent .section .subsection {
@@ -209,7 +210,7 @@ body {
 	content: attr(title) ":";
 	color: #000;
 	padding-right: 1ex;
-	margin-left: -1.5ex;
+	margin-left: -1ex;
 }
 
 .resumeContent .publication {
