@@ -28,21 +28,33 @@ body {
 	/* http://ie.microsoft.com/testdrive/graphics/cssgradientbackgroundmaker/default.html
 	 * http://www.colorzilla.com/gradient-editor/
 	 */
+	 font-family: monospace;
+}
+
+ul {
+	margin: 0px;
+}
+
+dl {
+	margin: 0px;
+}
+
+dt:before {
+	content: "• ";
 }
 
 .resumeContent {
-	width: 60%;
+	padding-top: 3em;
 	margin-left: 10%;
-	margin-right: auto;
+	margin-right: 10%;
 }
 
 .resumeContent * {
-	font-family: "DejaVu Sans", Calibri, Verdana, sans-serif;
 	color: #444;
 }
 
 .resumeHeader {
-	font: 22px Ubuntu, Calibri, Verdana, sans-serif;
+	font-size: x-large ;
 	font-variant: small-caps;
 	text-align: center;
 	background-color: #ccc;
@@ -53,29 +65,23 @@ body {
 	padding-left: 0.5ex;
 }
 
-.resumeFooter {
-	font: 20px "Ubuntu Mono", monospace;
-	text-align: right;
-	background-color: #ccc;
-	position: fixed;
-	bottom: 0;
-	right: 10%;
-	left: 10%;
-	padding-right: 0.5ex;
-}
-
 .resumeHeader .name:after {
 	font-size: 16px;
 	content: " [Resume]";
 }
 
-.resumeFooter span {
-	float: left;
-	text-align: center;
-	width: 25%;
+.footerContact {
+	font-variant: normal;
+	font-size: medium;
+	border-top:#000 1px solid;
 }
 
-.resumeFooter span:after {
+.footerContact span {
+	float: left;
+	width: 33%;
+}
+
+.footerContact span::after {
 	content: "; ";
 }
 
@@ -146,7 +152,7 @@ body {
 }
 
 .resumeAbout .container:before {
-	content: attr(title) "\0A";
+	content: attr(header) "\0A";
 	text-decoration: underline;
 	white-space: pre;
 	font-weight: bold;
@@ -164,7 +170,7 @@ body {
 }
 
 .resumeContent .section:before {
-	content: attr(title);
+	content: attr(header);
 	font-variant: small-caps;
 	font-weight: bold;
 	text-align: center;
@@ -196,7 +202,7 @@ body {
 
 .resumeContent .section .date {
 	/*width: 14ex;*/
-	font-size: 14px;
+	font-size: smaller;
 	white-space: nowrap;
 	padding-right: 0.5ex;
 	text-align: center;
@@ -207,7 +213,7 @@ body {
 }
 
 .resumeContent .section .subsection:before {
-	content: attr(title) ":";
+	content: attr(header) ":";
 	color: #000;
 	padding-right: 1ex;
 	margin-left: -1ex;
@@ -228,6 +234,34 @@ body {
 	content: ". " attr(publisher) ".";
 	font-variant: normal;
 	color: #333;
+}
+
+cv-role {
+	font-size: smaller;
+}
+
+cv-role::before {
+	content: "[";
+}
+
+cv-role::after {
+	content: "]";
+}
+
+.resumeContent .role {
+	font-size: smaller;
+}
+
+.resumeContent .role::before {
+	content: "[";
+}
+
+.resumeContent .role::after {
+	content: "]";
+}
+
+input[type='checkbox'].collapse_toggle {
+	display: none;
 }
 
 @media only screen and (max-width: 1100px), only screen and (max-device-width: 1100px) {
@@ -262,10 +296,6 @@ body {
 		margin-right: 1ex;
 	}
 
-	.resumeFooter {
-		display: none;
-	}
-
 	.resumeContent {
 		margin-right: 0;
 		margin-left: 0;
@@ -275,24 +305,18 @@ body {
 
 
 @media screen {
-	/*.resumeContent #interests {
-		display: none;
-	}*/
-
 	.resumeContent .section:before {
 		-webkit-box-shadow: #ccc 0px 0px 10px;
 		-moz-box-shadow: #ccc 0px 0px 10px;
 		box-shadow: #ccc 0px 0px 10px;
 		margin-left: -1ex;
 		margin-right: -1ex;
-		margin-top: -1em;
 		margin-bottom: 5px;
 	}
 
 	.resumeContent .section {
 		margin: 0.5ex;
 		padding: 0.5ex;
-		margin-top: 2em;
 	}
 
 	.resumeFooter, .resumeHeader {
@@ -309,24 +333,58 @@ body {
 
 	.resumeFooter {
 		border-top: 1px solid #999;
+		text-align: center;
 	}
 
 	.resumeFooter .screen {
 		text-align: justify;
-		overflow: hidden;
 		height: 1.1em;
 		padding-left: 0.8ex;
 	}
 
 	.resumeFooter .screen:after {
-		content: "___________________________________________________________________________________";
-		visibility: hidden;
-		line-height: 0;
-		height: 0;
+		content: "";
+		display: inline-block;
+		width: 100%;
 	}
 
 	.resumeContent .section:before {
 		border: 1px solid #aaa;
+	}
+
+	/* https://www.digitalocean.com/community/tutorials/css-collapsible */
+	.collapse_label {
+		margin-left: 1ex;
+	}
+
+	.collapse_label::before {
+		content: "＋";
+		float: left;
+		font-size: smaller;
+		font-weight: 900;
+		border: #000 solid 1px;
+		border-radius: 5px;
+	}
+
+	.collapse_label:hover::before {
+		content: "[＋show projects]";
+	}
+
+	.collapse_toggle:checked + .collapse_label::before {
+		content: "[－]";
+	}
+
+	cv-collapse {
+		display: block;
+		max-height: 0px;
+		overflow: hidden;
+		transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+	}
+
+	.collapse_toggle:checked + .collapse_label + cv-collapse {
+		display: block;
+		max-height: 40em;
+		transition: max-height 0.5s ease-in;
 	}
 
 	.print {
@@ -344,7 +402,6 @@ body {
 	}
 
 	.resumeHeader {
-		font-size: 18px;
 		position: static;
 		top: 0;
 	}
@@ -439,6 +496,10 @@ body {
 
 	.right {
 		right: 0;
+	}
+
+	cv-role {
+		display:none;
 	}
 
 }
